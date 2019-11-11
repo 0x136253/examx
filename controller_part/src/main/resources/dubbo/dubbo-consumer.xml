@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 增加引用远程服务配置 可以和本地bean一样使用demoService -->
+<!--    <dubbo:reference id="ticketService" check="false" interface="com.tew.service.TicketService"/>-->
+<!--    <dubbo:reference id="userDAOService" check="false" interface="com.tew.service.UserDAOService"/>-->
+<!--    <dubbo:service interface="com.tew.service.UmsAdminService" ref="umsAdminService"/>-->
+        <dubbo:reference interface="com.tew.service.UmsAdminService" check="false" id="umsAdminService"/>
+        <dubbo:reference id="permissDAO" check="false" interface="com.tew.service.PermissDAO"/>
+        <dubbo:reference interface="com.tew.service.LogsDAO" id="logsDAO" check="false" />
+        <dubbo:reference interface="com.tew.service.PersonDAO" id="personDAO" check="false"/>
+        <dubbo:reference interface="com.tew.service.Token_redisService" id="token_redisService" check="false"/>
+        <dubbo:reference interface="com.tew.service.GetPostInService" id="getPostInService" check="false"/>
+        <dubbo:reference interface="com.tew.service.ResService" id="resService" check="false"/>
+        <dubbo:reference interface="com.tew.service.WishinService" id="wishinService" check="false"/>
+        <dubbo:reference interface="com.tew.service.ProcessInService" id="processInService" check="false"/>
+        <dubbo:reference interface="com.tew.service.SchoolDirService" id="schoolDirService" check="false"/>
+        <dubbo:reference interface="com.tew.service.ExpermissService" id="expermissService" check="false"/>
+        <dubbo:reference interface="com.tew.service.FileService" id="fileService" check="false"/>
+        <dubbo:reference interface="com.tew.service.DateInService" id="dateInService" check="false"/>
+        <dubbo:reference interface="com.tew.service.CheckDAO" id="checkDAO" check="false"/>
+</beans>

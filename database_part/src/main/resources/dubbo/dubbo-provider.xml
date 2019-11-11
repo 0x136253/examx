@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.tew.service.UserDAO" ref="userDAO"/>
+    <dubbo:service interface="com.tew.service.PermissDAO" ref="permissDAO"/>
+    <dubbo:service interface="com.tew.service.LogsDAO" ref="logsDAO"/>
+    <dubbo:service interface="com.tew.service.PersonDAO" ref="personDAO"/>
+    <dubbo:service interface="com.tew.service.SchoolDAO" ref="schoolDAO"/>
+    <dubbo:service interface="com.tew.service.JobDAO" ref="jobDAO"/>
+    <dubbo:service interface="com.tew.service.SchoolJobDAO" ref="schoolJobDAO"/>
+    <dubbo:service interface="com.tew.service.ThemeDAO" ref="themeDAO"/>
+    <dubbo:service interface="com.tew.service.WishDAO" ref="wishDAO"/>
+    <dubbo:service interface="com.tew.service.ResBasDAO" ref="resBasDAO"/>
+    <dubbo:service interface="com.tew.service.ResPraDAO" ref="resPraDAO"/>
+    <dubbo:service interface="com.tew.service.ResJobDAO" ref="resJobDAO"/>
+    <dubbo:service interface="com.tew.service.ResHorDAO" ref="resHorDAO"/>
+    <dubbo:service interface="com.tew.service.ResEduDAO" ref="resEduDAO"/>
+    <dubbo:service interface="com.tew.service.CheckDAO" ref="checkDAO"/>
+    <dubbo:service interface="com.tew.service.ExtestDAO" ref="extestDAO"/>
+    <dubbo:service interface="com.tew.service.FileInfoDAO" ref="fileInfoDAO"/>
+    <dubbo:service interface="com.tew.service.HealthDAO" ref="healthDAO"/>
+</beans>
+

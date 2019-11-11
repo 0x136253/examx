@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 增加引用远程服务配置 可以和本地bean一样使用demoService -->
+    <dubbo:reference id="userDAO" check="false" interface="com.tew.service.UserDAO"/>
+    <dubbo:reference id="permissDAO" check="false" interface="com.tew.service.PermissDAO"/>
+    <dubbo:reference interface="com.tew.service.PersonDAO" check="false" id="personDAO"/>
+    <dubbo:reference interface="com.tew.service.SchoolDAO" check="false" id="schoolDAO"/>
+    <dubbo:reference interface="com.tew.service.SchoolJobDAO" check="false" id="schooljobDAO"/>
+    <dubbo:reference interface="com.tew.service.ThemeDAO" check="false" id="themeDAO"/>
+    <dubbo:reference interface="com.tew.service.JobDAO" check="false" id="jobDAO"/>
+    <dubbo:reference interface="com.tew.service.WishDAO" id="wishDAO" check="false"/>
+    <dubbo:reference interface="com.tew.service.ResBasDAO" id="resBasDAO" check="false"/>
+    <dubbo:reference interface="com.tew.service.ResPraDAO" id="resPraDAO" check="false"/>
+    <dubbo:reference interface="com.tew.service.ResJobDAO" id="resJobDAO" check="false"/>
+    <dubbo:reference interface="com.tew.service.ResHorDAO" id="resHorDAO" check="false"/>
+    <dubbo:reference interface="com.tew.service.ResEduDAO" id="resEduDAO" check="false"/>
+    <dubbo:reference interface="com.tew.service.CheckDAO" id="checkDAO" check="false"/>
+    <dubbo:reference interface="com.tew.service.ExtestDAO" id="extestDAO" check="false"/>
+    <dubbo:reference interface="com.tew.service.FileInfoDAO" id="fileInfoDAO" check="false"/>
+    <dubbo:reference interface="com.tew.service.HealthDAO" id="healthDAO" check="false"/>
+    <dubbo:service interface="com.tew.service.UmsAdminService" ref="umsAdminService"/>
+    <dubbo:service interface="com.tew.service.Token_redisService" ref="token_redisService"/>
+    <dubbo:service interface="com.tew.service.GetPostInService" ref="getPostInService"/>
+    <dubbo:service interface="com.tew.service.WishinService" ref="wishinService"/>
+    <dubbo:service interface="com.tew.service.ResService" ref="resService"/>
+    <dubbo:service interface="com.tew.service.ProcessInService" ref="processInService"/>
+    <dubo:service interface="com.tew.service.SchoolDirService" ref="schoolDirService"/>
+    <dubo:service interface="com.tew.service.ExpermissService" ref="expermissService"/>
+    <dubo:service interface="com.tew.service.FileService" ref="fileService"/>
+    <dubo:service interface="com.tew.service.DateInService" ref="dateInService"/>
+    <dubo:service interface="com.tew.service.HealthinService" ref="healthinService"/>
+</beans>

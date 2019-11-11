@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+
+<generatorConfiguration>
+    <!-- 数据库驱动包路径 -->
+    <classPathEntry location="D:\apache-maven-3.6.1\.m2\repository\com\oracle\ojdbc8\18.0.0.0.0\ojdbc8-18.0.0.0.0.jar" />
+
+    <context id="context1" targetRuntime="MyBatis3">
+        <!-- 为模型生成序列化方法-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!-- 为生成的Java模型创建一个toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!-- 生成注释配置 -->
+        <commentGenerator type="">
+            <!-- 是否取消注释 -->
+            <property name="suppressAllComments" value="false" />
+            <!-- 数据库注释支持 -->
+            <property name="addRemarkComments" value="true"/>
+            <!-- 时间格式设置 -->
+            <property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"/>
+        </commentGenerator>
+        <!-- 连接数据库 -->
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl" userId="sys as sysdba" password="smd358SMD" />
+        <!-- 数值类型数据是否全部使用BigDecimal类型 -->
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        <!-- 生成po类 -->
+        <javaModelGenerator targetPackage="com.tew.pojo" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- 生成xml映射文件 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="false" />
+            <property name="isMergeable" value="false" />
+        </sqlMapGenerator>
+        <!-- 生成dao类 -->
+        <javaClientGenerator targetPackage="com.tew.dao" targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+        <!-- 需要生产po类的表 -->
+<!--        <table schema="sys" tableName="acc_info" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="acc_permiss" domainObjectName="Permiss" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="sch_info" domainObjectName="School" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="per_info" domainObjectName="Person" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+        <table schema="sys" tableName="per_check" domainObjectName="Check" enableCountByExample="false" enableUpdateByExample="true" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>
+<!--        <table schema="sys" tableName="per_hire" domainObjectName="Hire" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+
+<!--        <table schema="sys" tableName="ex_test" domainObjectName="Extest" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">-->
+            <!-- 主键生成方式 -->
+<!--            <generatedKey column="SCHOOLID" sqlStatement="select seq_t_user.nextval from dual" identity="true" />-->
+<!--            &lt;!&ndash; 列名去除前缀 &ndash;&gt;-->
+<!--            <columnRenamingRule searchString="^[^_]+" replaceString="" />-->
+<!--        </table>-->
+<!--        <table schema="sys" tableName="wish_info" domainObjectName="Wish" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="inv_job" domainObjectName="Job" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="inv_school" domainObjectName="SchoolJob" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="inv_theme" domainObjectName="Theme" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="res_bas" domainObjectName="ResBas" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="res_edu" domainObjectName="ResEdu" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="res_job" domainObjectName="ResJob" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="res_pra" domainObjectName="ResPra" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="res_hor" domainObjectName="ResHor" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="sys" tableName="hea_info" domainObjectName="Health" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+<!--                <table schema="sys" tableName="file_info" domainObjectName="FileInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false"></table>-->
+
+        <!--        <table schema="sys" tableName="logs" domainObjectName="Logs" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+    </context>
+</generatorConfiguration>
