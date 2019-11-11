@@ -41,6 +41,7 @@ public class DateInServiceImpl implements DateInService {
             e.printStackTrace();
         }
         List<Extest> extestList1 = new ArrayList<>();
+        System.out.println("<<>>>"+excelForExamperDTOList.size());
         for(ExcelForExamperDTO item:excelForExamperDTOList){
             int num = item.getNum();
             int xname = item.getXname();

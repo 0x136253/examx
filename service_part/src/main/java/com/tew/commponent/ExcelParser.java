@@ -27,20 +27,16 @@ public class ExcelParser {
         params.setHeadRows(1);
         List<ExcelForExamperDTO> list=new ArrayList<>();
         list = upload.importExcel(photopath+fileName, 0, 1, ExcelForExamperDTO.class);
-     //   System.out.println(new Date().getTime() - start);
-      //  System.out.println(list.size());
-     //   System.out.println(list);
-//        for (int i = 0; i <list.size() ; i++) {
-//            list.get(i).setThemeid(themeid);
-//            ExcelForExamperDTO layer=new ExcelForExamperDTO();
-//            layer.setThemeid(themeid);
-//            layer.setAddress(list.get(i).getAddress());
-//            layer.setClazz(list.get(i).getClazz());
-//            layer.setXname(list.get(i).getXname());
-//            layer.setNum(list.get(i).getNum());
-//      //      int is_add=layerService.InsertLayer(layer);
-//            System.out.println(list.get(i));
-//        }
+        System.out.println(list.size());
+        System.out.println(list);
+        for (int i = 0; i <list.size() ; i++) {
+            ExcelForExamperDTO layer=new ExcelForExamperDTO();
+            layer.setAddress(list.get(i).getAddress());
+            layer.setClazz(list.get(i).getClazz());
+            layer.setXname(list.get(i).getXname());
+            layer.setNum(list.get(i).getNum());
+            System.out.println(list.get(i));
+        }
         return list;
     }
 
